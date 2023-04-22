@@ -12,6 +12,12 @@
     display: flex;
 }
 
+.logo-container{
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5rem;
+}
+
 .user-status-container{
     justify-content: flex-end;
     align-items: center;
@@ -44,5 +50,20 @@
     display: flex;
     justify-content: flex-start;
     border-top: 1px solid #C5FAD5;
-    position: fixed;
+}
+
+.logo-icon{
+    font-size: 50px;
+    color: #4a17c1;
+}
+
+.logo-text{
+    margin-left: 1.5rem;
+    font-size: 25px;
+    color: #4a17c1;
+}
+
+a{
+    text-decoration: none;
+    color: #4a17c1;
 }
