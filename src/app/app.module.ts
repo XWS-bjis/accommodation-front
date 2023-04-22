@@ -7,18 +7,28 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import {MatIconModule} from '@angular/material/icon';
+import { RegisterComponent } from './components/user/register/register.component';
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
