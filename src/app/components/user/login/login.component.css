@@ -1,0 +1,90 @@
+.login-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position:fixed;
+    left: 0;
+}
+
+.form-container{
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.text-container{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    color: #4a17c1;
+}
+
+  .input-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-input{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 35px;
+    border-radius: 5px;
+  }
+
+  .form-label{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 25px;
+    margin-top: 5px;
+  }
+
+  .form-btn{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 51%;
+    height: 35px;
+    color: #4a17c1;
+    background-color: #AA96DA;
+    border: 3px solid  #4a17c1;
+  }
+
+  .form-btn, a:hover{
+    cursor: pointer;
+  }
+
+  .form-btn:hover{
+    background-color: #C5FAD5;
+  }
+
+  .message-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 52%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+  }
+
+  a{
+    font-size: 12px;
+    margin-top: 5px;
+    text-decoration: underline;
+    color: #4a17c1;
+  }
