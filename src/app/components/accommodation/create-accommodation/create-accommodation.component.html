@@ -1,0 +1,67 @@
+
+<form class="accommodation-form">
+  <div class="container">
+    <div class="left">
+      <fieldset>
+        <legend>Accommodation Details</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    
+          <div class="address-fields">
+            <label for="street-number">Street Number:</label>
+            <input matInput class="text-input" type="text" id="street-number" name="street-number" required>
+            <label for="street-name">Street Name:</label>
+            <input type="text" id="street-name" name="street-name" required>
+            <label for="postal-code">Postal Code:</label>
+            <input type="text" id="postal-code" name="postal-code" required>
+            <label for="town">Town:</label>
+            <input type="text" id="town" name="town" required>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required>
+          </div>
+        <label for="minimal-guests">Minimal Allowed Guests:</label>
+        <input type="number" id="minimal-guests" name="minimal-guests" required>
+        <label for="maximal-guests">Maximal Allowed Guests:</label>
+        <input type="number" id="maximal-guests" name="maximal-guests" required>
+      </fieldset>  
+    </div>
+
+
+    <div class="right">
+      <fieldset>
+        <legend>Accommodation Offers</legend>
+        <label>Choose all that apply:</label>
+        <div class="offer-fields">
+          <input type="checkbox" id="wifi" name="offers" value="wifi">
+          <label for="wifi">Wi-Fi</label>
+    
+          <input type="checkbox" id="parking" name="offers" value="parking">
+          <label for="parking">Parking</label>
+    
+          <input type="checkbox" id="kitchen" name="offers" value="kitchen">
+          <label for="kitchen">Kitchen</label>
+    
+          <input type="checkbox" id="pets-allowed" name="offers" value="pets-allowed">
+          <label for="pets-allowed">Pets Allowed</label>
+    
+          <input type="checkbox" id="air-conditioner" name="offers" value="air-conditioner">
+          <label for="air-conditioner">Air-Conditioner</label>
+        </div>
+      </fieldset>
+    
+      <fieldset>
+        <legend>Accommodation Pictures</legend>
+        <label for="picture1">Picture 1:</label>
+        <input type="file" id="picture1" name="picture1">
+        <label for="picture2">Picture 2:</label>
+        <input type="file" id="picture2" name="picture2">
+        <label for="picture3">Picture 3:</label>
+        <input type="file" id="picture3" name="picture3">
+      </fieldset>
+      <button type="submit">Create Accommodation</button>
+    </div>
+  
+</div>
+  
+
+</form>
