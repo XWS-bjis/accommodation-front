@@ -22,4 +22,7 @@ export class UserService {
     return this.http.get<User>(`${baseUrl}/find/${id}`, {headers:headers});
   }
 
+  public deleteById(id: string): Observable<any>{
+    return this.http.delete<any>(`${baseUrl}/delete/${id}`, { headers:headers});
+  }
 }

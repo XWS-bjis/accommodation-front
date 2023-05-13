@@ -39,4 +39,14 @@ export class EditComponent implements OnInit {
     });
   }
 
+ 
+  deleteUser(){
+    this.userService.deleteById(this.id).subscribe(
+      (data) => {
+        console.log(data);
+        // window.location.reload();
+        this.router.navigate(['/login']);
+      }
+    );
+  }
 }
