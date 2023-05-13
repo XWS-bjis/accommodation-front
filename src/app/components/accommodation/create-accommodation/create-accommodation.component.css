@@ -1,0 +1,66 @@
+.accommodation-form {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.container {
+  width:1000px;
+}
+
+.left {
+  float:left;
+  width:400px;
+}
+
+.right {
+  float:right;
+  width:500px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkbox-group label {
+  margin-right: 20px;
+}
+
+
+button[type="submit"] {
+  background-color: #AA96DA;
+  color: white;
+  margin-top: 5%;
+  margin-left: 60%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}

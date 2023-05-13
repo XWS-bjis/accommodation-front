@@ -13,13 +13,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import { LoginComponent } from './components/user/login/login.component';
+import { CreateAccommodationComponent } from './components/accommodation/create-accommodation/create-accommodation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    CreateAccommodationComponent
   ],
   imports: [
     BrowserModule,
