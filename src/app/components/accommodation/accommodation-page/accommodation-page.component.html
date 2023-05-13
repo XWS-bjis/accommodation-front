@@ -1,0 +1,63 @@
+<div class="centered-content">
+    <div class="search-wrapper">
+      <div class="filter-div">
+        <mat-form-field appearance="outline">
+          <mat-label>Location</mat-label>
+          <input id="quantity" matInput
+          [(ngModel)]="accommodationFilter.location">
+        </mat-form-field>
+        <mat-form-field color="warn" appearance="outline">
+          <mat-label>Start date</mat-label>
+          <input matInput [matDatepicker]="picker"
+          (dateInput)="addEventStart('input', $any($event))" (dateChange)="addEventStart('change', $any($event))">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>  
+        <mat-form-field color="warn" appearance="outline">
+          <mat-label>End date</mat-label>
+          <input matInput [matDatepicker]="picker"
+          (dateInput)="addEventEnd('input', $any($event))" (dateChange)="addEventEnd('change', $any($event))">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>   
+        <mat-form-field appearance="outline">
+          <mat-label>Number of guests</mat-label>
+          <input type="number" id="quantity"
+            min="1"
+            aria-label="Number"
+            matInput
+            [(ngModel)]="accommodationFilter.guests">
+        </mat-form-field>         
+      </div>
+      <input type="submit" value="Search" class="search-button" [disabled]="!accommodationFilter.guests" (click)="getFilteredAccommodations()">
+    </div>
+
+    <div class="cards">
+      <mat-card *ngFor="let accommodation of accommodations" class="accommodation-card">
+        <mat-card-title class="accommodation-title">
+          {{accommodation.name}}
+          <!-- <div class="tag">
+            <mat-icon fontIcon="euro_symbol" class="icon"></mat-icon>
+            <span>{{accommodation.name}}</span>
+          </div> -->
+        </mat-card-title>
+        <mat-card-subtitle class="accommodation-subtitle">
+          {{accommodation.minimalAllowedGuests}} - {{accommodation.maximalAllowedGuests}} guests
+        </mat-card-subtitle>
+        <mat-card-content>
+          <!-- <p class="flight-subtitle"><mat-icon fontIcon="airline_seat_recline_extra" class="icon"></mat-icon> {{flight.availableSeatsNumber}}</p> -->
+          <div *ngIf="totalPassengers"> 
+            Regular price {{accommodation.price.regularPrice}} € <br/>
+            Temporary price {{accommodation.price.temporaryPrice}} €<br/>
+            Regular price for {{totalPassengers}} guests: {{totalPassengers*accommodation.price.regularPrice}} € <br/>
+            Temporary price for {{totalPassengers}} guests: {{totalPassengers*accommodation.price.temporaryPrice}} €<br/>
+            Type of payment: {{accommodation.typeOfPayment}}<br/>
+          </div>
+        </mat-card-content>
+        <!-- <mat-card-footer><hr><button class="check-out-button">See details</button></mat-card-footer> -->
+      </mat-card>
+      <div *ngIf="!accommodations.length" class="no-flights">
+        No flights found!
+      </div>
+    </div>
+  </div>

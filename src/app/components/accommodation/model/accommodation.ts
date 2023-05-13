@@ -7,6 +7,8 @@ export interface Accommodation {
     pictures : string[];
     minimalAllowedGuests : number;
     maximalAllowedGuests : number;
+    price: Price;
+    typeOfPayment: string
 } 
 
 export interface Address {
@@ -23,4 +25,16 @@ export interface Offer {
     kitchen : boolean,
     airConditioner : boolean,
     petsAllowed : boolean
+}
+
+export interface Price {
+    regularPrice: number,
+    temporaryPrice: number
+}
+
+export interface AccommodationFilter{
+    location: string;
+    guests: number;
+    startDate: string;
+    endDate: string;
 }
