@@ -1,0 +1,15 @@
+<div>
+    <h2 class="subject">Display of all available periods for the accommodation</h2>
+    <button (click)="addAvailablePeriod()">Add period</button>
+    <div class="cards">
+        <div *ngFor="let availablePeriod of availablePeriods" class="preview-card">
+            <label>Price: </label>
+            <input type="text" [(ngModel)]="availablePeriod.price">
+            <label>Start: </label>
+            <input type="text"  [(ngModel)]="availablePeriod.start">
+            <label>End: </label>
+            <input type="text"  [(ngModel)]="availablePeriod.end">
+            <button (click)="editAvailablePeriod(availablePeriod)">Edit</button>
+        </div>
+    </div>
+</div>

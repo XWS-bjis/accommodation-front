@@ -1,0 +1,11 @@
+<p>add available period </p>
+
+<div class="preview-card">
+    <label>Price: </label>
+    <input type="text" [(ngModel)]="availablePeriod.price">
+    <label>Start: </label>
+    <input type="text" [(ngModel)]="availablePeriod.start"  >
+    <label>End: </label>
+    <input type="text" [(ngModel)]="availablePeriod.end" >
+    <button (click)="savePeriod()">Add</button>
+</div>

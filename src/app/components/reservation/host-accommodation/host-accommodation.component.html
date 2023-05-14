@@ -1,0 +1,14 @@
+<div>
+    <h2 class="subject">Display of all accommodations for the host</h2>
+    <div class="cards">
+        <div *ngFor="let accommodation of accommodations" class="preview-card">
+            <a (click)="navigateToAccommodationPage(accommodation.id)">
+                <p>Name: {{accommodation.name}}</p>
+                <p>City: {{accommodation.address.town}}</p>
+                <p>Minimum guests: {{accommodation.minimalAllowedGuests}}</p>
+                <p>Maximum guests: {{accommodation.maximalAllowedGuests}}</p>
+                <!-- <img [src]=accommodation.pictures/> -->
+            </a>
+        </div>
+    </div>
+</div>
