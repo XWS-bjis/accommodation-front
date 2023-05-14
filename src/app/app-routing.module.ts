@@ -6,7 +6,7 @@ import { CreateAccommodationComponent } from './components/accommodation/create-
 import { HostAccommodationComponent } from './components/reservation/host-accommodation/host-accommodation.component';
 import { ViewAccommodationComponent } from './components/accommodation/view-accommodation/view-accommodation.component';
 import { AddAvailablePeriodComponent } from './components/accommodation/add-available-period/add-available-period/add-available-period.component';
-
+import { EditComponent } from './components/user/edit/edit/edit.component';
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
@@ -14,7 +14,8 @@ const routes: Routes = [
   {path: 'create-accommodation', component : CreateAccommodationComponent},
   {path: 'host-accommodations', component : HostAccommodationComponent},
   {path: 'accommodation/:id', component : ViewAccommodationComponent},
-  {path: 'addAvailablePeriod/:id', component: AddAvailablePeriodComponent}
+  {path: 'addAvailablePeriod/:id', component: AddAvailablePeriodComponent},
+  {path: 'edit', component : EditComponent}
 ];
 
 @NgModule({

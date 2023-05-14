@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,8 @@ import { CreateAccommodationComponent } from './components/accommodation/create-
 import { HostAccommodationComponent } from './components/reservation/host-accommodation/host-accommodation.component';
 import { ViewAccommodationComponent } from './components/accommodation/view-accommodation/view-accommodation.component';
 import { AddAvailablePeriodComponent } from './components/accommodation/add-available-period/add-available-period/add-available-period.component';
+import { EditComponent } from './components/user/edit/edit/edit.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { AddAvailablePeriodComponent } from './components/accommodation/add-avai
     HostAccommodationComponent,
     ViewAccommodationComponent,
     AddAvailablePeriodComponent,
+    EditComponent
   ],
   imports: [
     HttpClientModule,
@@ -39,7 +42,8 @@ import { AddAvailablePeriodComponent } from './components/accommodation/add-avai
     FormsModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
