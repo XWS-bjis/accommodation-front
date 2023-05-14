@@ -6,16 +6,17 @@
     </div>
     <div class="user-status-container">
         <div class="item-container"><mat-icon>language</mat-icon>Language</div>
-        <div class="item-container" routerLink="login"><mat-icon>person</mat-icon>Login</div>
-        <div class="item-container-register" routerLink="register">Register</div>
+        <div class="item-container" routerLink="login" *ngIf="userExists === 'false'"><mat-icon>person</mat-icon>Login</div>
+        <div class="item-container-register" routerLink="register" *ngIf="userExists === 'false'">Register</div>
+        <div class="item-container-register" *ngIf="userExists === 'true'" (click)="logout()">Log out</div>
 
     </div>
 </div>
 <div class="menu-container">
-        <div class="item-container"><mat-icon>account_circle</mat-icon>Account</div>
-        <div class="item-container"><mat-icon>info</mat-icon>Pending requests</div>
-        <div class="item-container"><mat-icon>calendar_today</mat-icon>My reservations</div>
-        <div class="item-container" routerLink="create-accommodation"><mat-icon>library_add</mat-icon>Create accommodation</div>
-        <div class="item-container" routerLink="edit"><mat-icon>update</mat-icon>Update info</div>
-        <div class="item-container"><mat-icon>question_answer</mat-icon>Manage requests</div>
+        <div class="item-container" *ngIf="userExists === 'true'" routerLink="edit"><mat-icon>account_circle</mat-icon>Account</div>
+        <div class="item-container" *ngIf="role === 'ROLE GUEST'"><mat-icon>info</mat-icon>Pending requests</div>
+        <div class="item-container" *ngIf="role === 'ROLE GUEST'"><mat-icon>calendar_today</mat-icon>My reservations</div>
+        <div class="item-container" routerLink="create-accommodation" *ngIf="role === 'ROLE ADMIN'"><mat-icon>library_add</mat-icon>Create accommodation</div>
+        <div class="item-container" *ngIf="role === 'ROLE ADMIN'"><mat-icon>update</mat-icon>Update info</div>
+        <div class="item-container" *ngIf="role === 'ROLE ADMIN'"><mat-icon>question_answer</mat-icon>Manage requests</div>
 </div>

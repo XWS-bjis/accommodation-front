@@ -14,15 +14,19 @@ export class EditComponent implements OnInit {
   public address: Address = {} as Address;
   public id:string = "";
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router,
+     private userService: UserService) { }
 
   ngOnInit(): void {
+    this.getUser();
+    console.log(this.user)
   }
 
   saveUser() {
     this.user.address = this.address;
-    this.userService.update(this.id, this.user).subscribe(
-      response => {
+    console.log(this.userService.getUserId())
+    this.userService.update(this.userService.getUserId() || "-1", this.user).subscribe(
+      (data) => {
         console.log('User successfully updated:', this.user);
       },
       error => {
@@ -32,7 +36,7 @@ export class EditComponent implements OnInit {
   }
 
   getUser(){
-    this.userService.getById(this.id).subscribe((data) =>{
+    this.userService.getById(this.userService.getUserId() || "-1").subscribe((data) =>{
       this.user = data;
       this.address = data.address;
       console.log(this.user)
@@ -41,12 +45,11 @@ export class EditComponent implements OnInit {
 
  
   deleteUser(){
-    this.userService.deleteById(this.id).subscribe(
+    this.userService.deleteById(this.userService.getUserId() || "-1").subscribe(
       (data) => {
-        console.log(data);
-        // window.location.reload();
         this.router.navigate(['/login']);
       }
     );
+    this.userService.logout()
   }
 }
