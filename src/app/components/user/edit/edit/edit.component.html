@@ -5,8 +5,8 @@
         </div>
         <div class="data-container">
             <div class="left-data-container">
-                <label class="form-label" for="id">*Id:</label>
-                <input matInput class="text-input" type="text" name="id" placeholder="Ovde ide id za sad" id="id" [(ngModel)]="id" required>
+                <!--<label class="form-label" for="id">*Id:</label>
+                <input matInput class="text-input" type="text" name="id" placeholder="Ovde ide id za sad" id="id" [(ngModel)]="id" required>-->
                 <label class="form-label" for="username">*Name:</label>
                 <input matInput class="text-input" type="text" name="name" placeholder="Enter name" id="name" [(ngModel)]="user.name" required>
                 <label class="form-label" for="surname">*Surname:</label>
@@ -19,8 +19,6 @@
 
                 <label class="form-label" for="password">*Password:</label>
                 <input matInput class="text-input" type="password" name="password" placeholder="Enter password" id="password" [(ngModel)]="user.password" required>
-                <label class="form-label" for="repeatPass">*Confirm password:</label>
-                <input matInput class="text-input" type="password"  name="repeatPass" placeholder="Reenter password" id="repeatPass" required>
 
             </div>
             <div class="right-data-container">
@@ -36,21 +34,12 @@
 
                 <label class="form-label" for="country">*Country:</label>
                 <input class="text-input" type="text" name="country" placeholder="Enter country" id="country" [(ngModel)]="address.country" required>
-
-                <label class="form-label">*Register as:</label>
-                <select class="select-role" [(ngModel)]="user.role">
-                    <option value="HOST">HOST</option>
-                    <option value="GUEST">GUEST</option>
-                </select>
             </div>
 
         </div>
         <div class="btn-container">
-            <button mat-flat-button type="button" class="signup-btn" (click)="saveUser()">SIGN UP</button>
-            <button mat-flat-button type="button" class="signup-btn" style="margin-top: 5px;" (click)="getUser()">GET USER</button>
-            <button mat-flat-button type="button" class="signup-btn" style="margin-top: 5px;" (click)="deleteUser()">DELETE USER</button>
-
-
+            <button mat-flat-button type="button" class="signup-btn"  (click)="saveUser()">EDIT ACCOUNT</button>
+            <button mat-flat-button type="button" class="signup-btn" style="margin-top: 5px;" (click)="deleteUser()">DELETE ACCOUNT</button>
         </div>
     </div>
 
