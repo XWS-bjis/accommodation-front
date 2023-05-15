@@ -16,11 +16,10 @@ export class NavbarComponent implements OnInit {
               private router:Router) { }
 
   ngOnInit(): void {
-      const role = this.userService.getRole();
-      this.role = role ? role : '';
-      console.log(role)
       this.userService.currentNav.subscribe(message =>{
        this.userExists = message;
+       const role = this.userService.getRole();
+       this.role = role ? role : '';
       })
   }
 

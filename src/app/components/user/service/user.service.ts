@@ -6,7 +6,7 @@ import { LoginDTO } from '../model/login.model';
 import { Route, Router } from '@angular/router';
 
 
-const baseUrl = 'http://localhost:8080/api/v1/user';
+const baseUrl = 'http://localhost:8084/api/v1/user';
 const headers: HttpHeaders = new HttpHeaders({'Content-Type':'application/json'});
 
 @Injectable({
@@ -45,8 +45,9 @@ export class UserService {
 
       localStorage.setItem('userId', data.id? data.id : '-1');
       this.currentUserId = data.id;
+      alert(data.role)
 
-      localStorage.setItem('role', data.role);
+      localStorage.setItem('role', data.role? data.role : '');
       this.currentRole = data.role
       
        this.nav.next('true');
