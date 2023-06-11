@@ -15,7 +15,7 @@
 <div class="menu-container">
         <div class="item-container" *ngIf="userExists === 'true'" routerLink="edit"><mat-icon>account_circle</mat-icon>Account</div>
         <div class="item-container" *ngIf="role === 'ROLE_GUEST'"><mat-icon>info</mat-icon>Pending requests</div>
-        <div class="item-container" *ngIf="role === 'ROLE_GUEST'"><mat-icon>calendar_today</mat-icon>My reservations</div>
+        <div class="item-container"  routerLink="guest-reservation"><mat-icon>calendar_today</mat-icon>My reservations</div>
         <div class="item-container" routerLink="create-accommodation" *ngIf="role === 'ROLE_ADMIN'"><mat-icon>library_add</mat-icon>Create accommodation</div>
         <div class="item-container" *ngIf="role === 'ROLE_ADMIN'"><mat-icon>update</mat-icon>Update info</div>
         <div class="item-container" *ngIf="role === 'ROLE_ADMIN'"><mat-icon>question_answer</mat-icon>Manage requests</div>
