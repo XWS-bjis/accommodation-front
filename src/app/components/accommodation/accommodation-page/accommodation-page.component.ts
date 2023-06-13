@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Accommodation, AccommodationFilter } from '../model/accommodation';
+import { Accommodation, AccommodationFilter, AccommodationSearch, Offer } from '../model/accommodation';
 import { AccommodationService } from '../service/accommodation.service';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
@@ -11,7 +11,8 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 export class AccommodationPageComponent implements OnInit {
 
   public accommodations: Accommodation[] = [];
-  public accommodationFilter: AccommodationFilter = <AccommodationFilter>{};
+  public accommodationFilter: AccommodationSearch = <AccommodationSearch>{};
+  public filter: AccommodationFilter = {} as AccommodationFilter;
   public totalPassengers: number = 0;
 
   getAccommodations(): void {
@@ -40,6 +41,7 @@ export class AccommodationPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.filter.offer = {} as Offer; 
     this.getAccommodations();
   }
 

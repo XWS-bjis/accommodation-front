@@ -32,9 +32,16 @@ export interface Price {
     temporaryPrice: number
 }
 
-export interface AccommodationFilter{
+export interface AccommodationSearch {
     location: string;
     guests: number;
     startDate: string;
     endDate: string;
+}
+
+export interface AccommodationFilter {
+    host: boolean;
+    minPrice: number;
+    maxPrice: number;
+    offer: Offer;
 }

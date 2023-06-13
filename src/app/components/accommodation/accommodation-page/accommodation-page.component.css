@@ -10,6 +10,10 @@
     padding: 1rem;
     color: black !important;
   }
+  .small-num-inp{
+    min-width: 6rem;
+    width: 6rem;
+  }
 
   .accommodation-title {
     display: flex;
@@ -90,6 +94,15 @@
     height: 1rem !important;
   }
   
+  .filters {
+    width:7rem;
+    height:3500px;
+    float: left;
+    display: block;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
   mat-form-field {
     font-size: 12px;
     letter-spacing: normal;

@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Accommodation, AccommodationFilter } from '../model/accommodation';
+import { Accommodation, AccommodationFilter, AccommodationSearch } from '../model/accommodation';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class AccommodationService {
     return this.http.get<Accommodation[]>(`${this.baseUrl}all`, { headers: this.headers });
   }
 
-  filter(filter: AccommodationFilter): Observable<Accommodation[]> {
+  filter(filter: AccommodationSearch): Observable<Accommodation[]> {
     return this.http.post<Accommodation[]>(`${this.baseUrl}filter`, JSON.stringify(filter), { headers: this.headers })
   } 
 }

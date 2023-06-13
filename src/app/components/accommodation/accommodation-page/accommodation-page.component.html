@@ -57,7 +57,32 @@
         <!-- <mat-card-footer><hr><button class="check-out-button">See details</button></mat-card-footer> -->
       </mat-card>
       <div *ngIf="!accommodations.length" class="no-flights">
-        No flights found!
+        No accomm;.odations found!
       </div>
+    </div>
+    <div class="filters">
+      <mat-form-field appearance="outline" 
+      class="small-num-inp">
+        <mat-label>min price</mat-label>
+        <input type="number" id="quantity"
+          min="1"
+          aria-label="Number"
+          matInput
+          [(ngModel)]="filter.minPrice">
+      </mat-form-field>  
+      <mat-form-field appearance="outline" class="small-num-inp">
+        <mat-label>max price</mat-label>
+        <input type="number" id="quantity"
+          min="1"
+          aria-label="Number"
+          matInput
+          [(ngModel)]="filter.maxPrice">
+      </mat-form-field>     
+          <mat-checkbox class="example-margin" [(ngModel)]="filter.host">istaknuti host!</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.wifi"> wifi</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.parking"> parking</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.kitchen"> kitchen</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.airConditioner"> airConditioner</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.petsAllowed"> petsAllowed</mat-checkbox>
     </div>
   </div>
