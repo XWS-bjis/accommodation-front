@@ -18,6 +18,8 @@ import { HostAccommodationComponent } from './components/reservation/host-accomm
 import { ViewAccommodationComponent } from './components/accommodation/view-accommodation/view-accommodation.component';
 import { AddAvailablePeriodComponent } from './components/accommodation/add-available-period/add-available-period/add-available-period.component';
 import { EditComponent } from './components/user/edit/edit/edit.component';
+import { GuestReservationComponent } from './components/reservation/guest-reservation/guest-reservation.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { EditComponent } from './components/user/edit/edit/edit.component';
     HostAccommodationComponent,
     ViewAccommodationComponent,
     AddAvailablePeriodComponent,
-    EditComponent
+    EditComponent,
+    GuestReservationComponent
   ],
   imports: [
     HttpClientModule,
@@ -43,7 +46,8 @@ import { EditComponent } from './components/user/edit/edit/edit.component';
     MatFormFieldModule,
     MatCheckboxModule,
     MatRadioModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
