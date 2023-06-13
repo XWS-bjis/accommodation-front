@@ -15,3 +15,8 @@ export interface Address{
     town:String,
     country:String
 }
+
+export interface LogedUser{
+    id: string,
+    role: string
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +22,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
-import { HttpClientModule } from '@angular/common/http';
+import { HostAccommodationComponent } from './components/reservation/host-accommodation/host-accommodation.component';
+import { ViewAccommodationComponent } from './components/accommodation/view-accommodation/view-accommodation.component';
+import { AddAvailablePeriodComponent } from './components/accommodation/add-available-period/add-available-period/add-available-period.component';
+import { EditComponent } from './components/user/edit/edit/edit.component';
+import { GuestReservationComponent } from './components/reservation/guest-reservation/guest-reservation.component';
+
+
 
 @NgModule({
   declarations: [
@@ -30,9 +37,15 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     LoginComponent,
     CreateAccommodationComponent,
-    AccommodationPageComponent
+    AccommodationPageComponent,
+    HostAccommodationComponent,
+    ViewAccommodationComponent,
+    AddAvailablePeriodComponent,
+    EditComponent,
+    GuestReservationComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
@@ -49,7 +62,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     MatSliderModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

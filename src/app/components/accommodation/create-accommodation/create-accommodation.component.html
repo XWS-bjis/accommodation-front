@@ -5,24 +5,24 @@
       <fieldset>
         <legend>Accommodation Details</legend>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" value="accommodation.name" name="name" [(ngModel)]="accommodation.name" required>
     
           <div class="address-fields">
-            <label for="street-number">Street Number:</label>
-            <input matInput class="text-input" type="text" id="street-number" name="street-number" required>
+            <label for="streetNumber">Street Number:</label>
+            <input matInput class="text-input" type="text" id="streetNumber"  value="address.streetNumber" name="streetNumber" [(ngModel)]="address.streetNumber" required>
             <label for="street-name">Street Name:</label>
-            <input type="text" id="street-name" name="street-name" required>
+            <input type="text" id="street-name" value="address.streetName" name="streetName" [(ngModel)]="address.streetName" required>
             <label for="postal-code">Postal Code:</label>
-            <input type="text" id="postal-code" name="postal-code" required>
+            <input type="text" id="postal-code" value="address.postalCode" name="postalCode" [(ngModel)]="address.postalCode" required>
             <label for="town">Town:</label>
-            <input type="text" id="town" name="town" required>
+            <input type="text" id="town" value="address.town" name="town" [(ngModel)]="address.town" required>
             <label for="country">Country:</label>
-            <input type="text" id="country" name="country" required>
+            <input type="text" id="country" value="address.country" name="country" [(ngModel)]="address.country" required>
           </div>
         <label for="minimal-guests">Minimal Allowed Guests:</label>
-        <input type="number" id="minimal-guests" name="minimal-guests" required>
+        <input type="number" id="minimal-guests" value="accommodation.minimalAllowedGuests" name="minimalAllowedGuests" [(ngModel)]="accommodation.minimalAllowedGuests" required>
         <label for="maximal-guests">Maximal Allowed Guests:</label>
-        <input type="number" id="maximal-guests" name="maximal-guests" required>
+        <input type="number" id="maximal-guests" value="accommodation.maximalAllowedGuests" name="country" [(ngModel)]="accommodation.maximalAllowedGuests" required>
       </fieldset>  
     </div>
 
@@ -32,33 +32,32 @@
         <legend>Accommodation Offers</legend>
         <label>Choose all that apply:</label>
         <div class="offer-fields">
-          <input type="checkbox" id="wifi" name="offers" value="wifi">
+          <input type="checkbox" id="wifi" name="offers" value="wifi" [(ngModel)]="offer.wifi">
           <label for="wifi">Wi-Fi</label>
     
-          <input type="checkbox" id="parking" name="offers" value="parking">
+          <input type="checkbox" id="parking" name="offers" value="parking" [(ngModel)]="offer.parking">
           <label for="parking">Parking</label>
     
-          <input type="checkbox" id="kitchen" name="offers" value="kitchen">
+          <input type="checkbox" id="kitchen" name="offers" value="kitchen" [(ngModel)]="offer.kitchen">
           <label for="kitchen">Kitchen</label>
     
-          <input type="checkbox" id="pets-allowed" name="offers" value="pets-allowed">
+          <input type="checkbox" id="pets-allowed" name="offers" value="pets-allowed" [(ngModel)]="offer.petsAllowed">
           <label for="pets-allowed">Pets Allowed</label>
     
-          <input type="checkbox" id="air-conditioner" name="offers" value="air-conditioner">
+          <input type="checkbox" id="air-conditioner" name="offers" value="air-conditioner" [(ngModel)]="offer.airConditioner">
           <label for="air-conditioner">Air-Conditioner</label>
         </div>
       </fieldset>
     
       <fieldset>
         <legend>Accommodation Pictures</legend>
-        <label for="picture1">Picture 1:</label>
-        <input type="file" id="picture1" name="picture1">
-        <label for="picture2">Picture 2:</label>
-        <input type="file" id="picture2" name="picture2">
-        <label for="picture3">Picture 3:</label>
-        <input type="file" id="picture3" name="picture3">
+        <label for="imageUrl">Slika URL1:</label>
+        <input type="text" id="imageUrl" name="imageUrl" [(ngModel)]="accommodation.pictures">
+        <!-- Prikaz slike -->
+        <img [src]="accommodation.pictures" alt="Slika smeštaja" *ngIf="accommodation.pictures">
+
       </fieldset>
-      <button type="submit">Create Accommodation</button>
+      <button type="submit" (click)="onSubmit()">Create Accommodation</button>
     </div>
   
 </div>
