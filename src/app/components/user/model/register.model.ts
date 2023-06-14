@@ -8,6 +8,19 @@ export interface User{
     address: Address
 }
 
+
+export interface CompleteUser{
+    id: string,
+    name: string,
+    surname: string,
+    username: string,
+    email: string,
+    password: string,
+    role: string,
+    address: Address
+}
+
+
 export interface Address{
     streetNumber:String,
     streetName:String,

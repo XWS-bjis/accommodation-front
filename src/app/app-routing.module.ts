@@ -8,6 +8,7 @@ import { ViewAccommodationComponent } from './components/accommodation/view-acco
 import { AddAvailablePeriodComponent } from './components/accommodation/add-available-period/add-available-period/add-available-period.component';
 import { EditComponent } from './components/user/edit/edit/edit.component';
 import { GuestReservationComponent } from './components/reservation/guest-reservation/guest-reservation.component';
+import { ViewVisitedAccommodationsComponent } from './components/accommodation/view-visited-accommodations/view-visited-accommodations.component';
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'accommodation/:id', component : ViewAccommodationComponent},
   {path: 'addAvailablePeriod/:id', component: AddAvailablePeriodComponent},
   {path: 'edit', component : EditComponent},
-  {path: 'guest-reservation', component : GuestReservationComponent}
+  {path: 'guest-reservation', component : GuestReservationComponent},
+  {path: 'visited-accommodations', component : ViewVisitedAccommodationsComponent},
 ];
 
 @NgModule({
