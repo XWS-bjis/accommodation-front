@@ -1,0 +1,18 @@
+<h1>Accommodation List</h1>
+<ul>
+  <li *ngFor="let accommodation of accommodations">
+    <h2>{{ accommodation.name }}</h2>
+    <p>Average Grade: {{ accommodation.avgGrade }}</p>
+    <ul>
+      <li *ngFor="let grade of accommodation.grades">
+        Grade: {{ grade.value }} by {{ grade.reviewer?.name }} {{ grade.reviewer?.surname }}
+        <button *ngIf="loggedInUserId === grade.reviewerId" (click)="deleteGrade(accommodation.id)">Delete</button>
+        <label *ngIf="loggedInUserId === grade.reviewerId">New Grade: </label>
+        <input *ngIf="loggedInUserId === grade.reviewerId" type="text" [(ngModel)]="gradeValueEdit">
+        <button *ngIf="loggedInUserId === grade.reviewerId" (click)="editGrade(accommodation.id)">Edit</button>
+      </li>
+    </ul>
+    <input type="text" [(ngModel)]="gradeValueAdd">
+    <button (click)="addGrade(accommodation.id)">Add</button>
+  </li>
+</ul>
