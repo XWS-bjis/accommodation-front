@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Accommodation, AccommodationFilter, AccommodationSearch, Offer } from '../model/accommodation';
+import { Accommodation, AccommodationFilter, AccommodationSearch, Offer, Price } from '../model/accommodation';
 import { AccommodationService } from '../service/accommodation.service';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
@@ -12,11 +12,14 @@ export class AccommodationPageComponent implements OnInit {
 
   public accommodations: Accommodation[] = [];
   public accommodationFilter: AccommodationSearch = <AccommodationSearch>{};
+  public accommodationSideFilter: AccommodationFilter = <AccommodationFilter>{};
   public filter: AccommodationFilter = {} as AccommodationFilter;
   public totalPassengers: number = 0;
+  public price: Price = {} as Price;
+  public offer: Offer = {wifi: false, parking: false, kitchen: false, airConditioner: false, petsAllowed: false} as Offer; 
 
   getAccommodations(): void {
-    this.service.getAll().subscribe(data => {
+    this.service.getAllAccommodations().subscribe(data => {
       this.accommodations = data;
     })
   }
@@ -24,6 +27,13 @@ export class AccommodationPageComponent implements OnInit {
   getFilteredAccommodations(): void{
     this.service.filter(this.accommodationFilter).subscribe(data => {
       this.totalPassengers = this.accommodationFilter.guests
+      this.accommodations = data;
+    })
+  }
+
+  sideFilterChanged(): void{
+    this.filter.offer = this.offer;
+    this.service.sideFilter(this.filter).subscribe(data => {
       this.accommodations = data;
     })
   }
@@ -41,7 +51,8 @@ export class AccommodationPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.filter.offer = {} as Offer; 
+    this.filter.minPrice = 0;
+    this.filter.maxPrice = Number.MAX_VALUE;
     this.getAccommodations();
   }
 

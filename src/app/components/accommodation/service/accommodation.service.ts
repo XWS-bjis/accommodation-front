@@ -18,7 +18,11 @@ export class AccommodationService {
     private http : HttpClient) {}
 
   filter(filter: AccommodationSearch): Observable<Accommodation[]> {
-    return this.http.post<Accommodation[]>(`${this.baseUrl}filter`, JSON.stringify(filter), { headers: this.headers })
+    return this.http.post<Accommodation[]>(`${this.baseUrl}/filter`, JSON.stringify(filter), { headers: this.headers })
+  } 
+
+  sideFilter(filter: AccommodationFilter): Observable<Accommodation[]> {
+    return this.http.post<Accommodation[]>(`${this.baseUrl}/sidefilter`, JSON.stringify(filter), { headers: this.headers })
   } 
 
   createAccommodation(accommodation : Accommodation): Observable<Accommodation>{

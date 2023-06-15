@@ -53,11 +53,35 @@
             Temporary price for {{totalPassengers}} guests: {{totalPassengers*accommodation.price.temporaryPrice}} €<br/>
             Type of payment: {{accommodation.typeOfPayment}}<br/>
           </div>
+          <div class="tag" *ngIf="accommodation.offers.wifi">
+            <mat-icon fontIcon="network_wifi" class="icon"></mat-icon>
+            <span> wifi </span>
+          </div>
+          <div class="tag" *ngIf="accommodation.offers.parking">
+            <mat-icon fontIcon="network_wifi" class="icon"></mat-icon>
+            <span> parking </span>
+          </div>
+          <div class="tag" *ngIf="accommodation.offers.kitchen">
+            <mat-icon fontIcon="network_wifi" class="icon"></mat-icon>
+            <span> kitchen </span>
+          </div>
+          <div class="tag" *ngIf="accommodation.offers.airConditioner">
+            <mat-icon fontIcon="network_wifi" class="icon"></mat-icon>
+            <span> air conditioner </span>
+          </div>
+          <div class="tag" *ngIf="accommodation.offers.petsAllowed">
+            <mat-icon fontIcon="network_wifi" class="icon"></mat-icon>
+            <span> pets allowed </span>
+          </div>
+          <div class="tag" *ngIf="accommodation.price.regularPrice">
+            <mat-icon fontIcon="network_wifi" class="icon"></mat-icon>
+            <span> {{accommodation.price.regularPrice}}</span>
+          </div>
         </mat-card-content>
         <!-- <mat-card-footer><hr><button class="check-out-button">See details</button></mat-card-footer> -->
       </mat-card>
       <div *ngIf="!accommodations.length" class="no-flights">
-        No accomm;.odations found!
+        No accommodations found!
       </div>
     </div>
     <div class="filters">
@@ -68,7 +92,8 @@
           min="1"
           aria-label="Number"
           matInput
-          [(ngModel)]="filter.minPrice">
+          [(ngModel)]="filter.minPrice"
+          (ngModelChange)="sideFilterChanged()">
       </mat-form-field>  
       <mat-form-field appearance="outline" class="small-num-inp">
         <mat-label>max price</mat-label>
@@ -76,13 +101,14 @@
           min="1"
           aria-label="Number"
           matInput
-          [(ngModel)]="filter.maxPrice">
+          [(ngModel)]="filter.maxPrice"
+          (ngModelChange)="sideFilterChanged()">
       </mat-form-field>     
-          <mat-checkbox class="example-margin" [(ngModel)]="filter.host">istaknuti host!</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.wifi"> wifi</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.parking"> parking</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.kitchen"> kitchen</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.airConditioner"> airConditioner</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="filter.offer.petsAllowed"> petsAllowed</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="filter.host" (ngModelChange)="sideFilterChanged()">featured host</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="offer.wifi" (ngModelChange)="sideFilterChanged()"> wifi</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="offer.parking" (ngModelChange)="sideFilterChanged()"> parking</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="offer.kitchen" (ngModelChange)="sideFilterChanged()"> kitchen</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="offer.airConditioner" (ngModelChange)="sideFilterChanged()"> airConditioner</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="offer.petsAllowed" (ngModelChange)="sideFilterChanged()"> petsAllowed</mat-checkbox>
     </div>
   </div>
