@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Accommodation, Grade } from '../model/accommodation';
 import { Observable } from 'rxjs';
+import { Accommodation, AccommodationFilter, AccommodationSearch, Grade } from '../model/accommodation';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -16,15 +16,23 @@ export class AccommodationService {
 
   constructor(
     private router : Router,
-    private http : HttpClient) { }
+    private http : HttpClient) {}
 
-    createAccommodation(accommodation : Accommodation): Observable<Accommodation>{
-      return this.http.post<Accommodation>(`${this.baseUrl}`,JSON.stringify(accommodation), { headers: this.headers });
-    }
+  filter(filter: AccommodationSearch): Observable<Accommodation[]> {
+    return this.http.post<Accommodation[]>(`${this.baseUrl}/filter`, JSON.stringify(filter), { headers: this.headers })
+  } 
 
-    getAllAccommodations(): Observable<Accommodation[]> {
-      return this.http.get<Accommodation[]>(this.baseUrl);
-    }
+  sideFilter(filter: AccommodationFilter): Observable<Accommodation[]> {
+    return this.http.post<Accommodation[]>(`${this.baseUrl}/sidefilter`, JSON.stringify(filter), { headers: this.headers })
+  } 
+
+  createAccommodation(accommodation : Accommodation): Observable<Accommodation>{
+    return this.http.post<Accommodation>(`${this.baseUrl}`,JSON.stringify(accommodation), { headers: this.headers });
+  }
+
+  getAllAccommodations(): Observable<Accommodation[]> {
+    return this.http.get<Accommodation[]>(this.baseUrl);
+  }
 
     public getVisitedAccommodationsByUser(userId: string): Observable<Accommodation[]> {
       return this.http.get<Accommodation[]>(`${this.baseUrl}/user/${userId}/visited`);

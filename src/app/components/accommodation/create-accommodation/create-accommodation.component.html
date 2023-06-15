@@ -48,6 +48,19 @@
           <label for="air-conditioner">Air-Conditioner</label>
         </div>
       </fieldset>
+
+      <fieldset>
+        <legend>Accommodation payment</legend>
+        <label for="regular-price">Regular price:</label>
+        <input type="number" id="regular-price" value="price.regularPrice" name="regPrice" [(ngModel)]="price.regularPrice" required>
+        <label for="temporary-price">Temporary price:</label>
+        <input type="number" id="temporary-price" value="price.temporaryPrice" name="tempPrice" [(ngModel)]="price.temporaryPrice" required>
+        <br/>
+        <input type="radio" id="person" name="per" value="PER_PERSON" [(ngModel)]="accommodation.typeOfPayment">
+        <label for="person">Per person</label>
+        <input type="radio" id="night" name="per" value="PER_NIGHT" [(ngModel)]="accommodation.typeOfPayment">
+        <label for="night">Per night</label>
+      </fieldset>
     
       <fieldset>
         <legend>Accommodation Pictures</legend>

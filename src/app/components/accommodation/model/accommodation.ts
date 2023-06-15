@@ -9,6 +9,8 @@ export interface Accommodation {
     pictures : string[];
     minimalAllowedGuests : number;
     maximalAllowedGuests : number;
+    price: Price;
+    typeOfPayment: string;
     avgGrade: number | undefined;
     grades: Grade[];
 } 
@@ -35,4 +37,23 @@ export interface Offer {
     kitchen : boolean,
     airConditioner : boolean,
     petsAllowed : boolean
+}
+
+export interface Price {
+    regularPrice: number,
+    temporaryPrice: number
+}
+
+export interface AccommodationSearch {
+    location: string;
+    guests: number;
+    startDate: string;
+    endDate: string;
+}
+
+export interface AccommodationFilter {
+    host: boolean;
+    minPrice: number;
+    maxPrice: number;
+    offer: Offer;
 }
