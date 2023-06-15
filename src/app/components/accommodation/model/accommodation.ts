@@ -1,3 +1,5 @@
+import { CompleteUser, User } from "../../user/model/register.model";
+
 export interface Accommodation {
     id : string,
     hostId : number,
@@ -8,8 +10,18 @@ export interface Accommodation {
     minimalAllowedGuests : number;
     maximalAllowedGuests : number;
     price: Price;
-    typeOfPayment: string
+    typeOfPayment: string;
+    avgGrade: number | undefined;
+    grades: Grade[];
 } 
+
+export interface Grade {
+    id: string,
+    createdAt: string,
+    reviewerId: string,
+    value: number,
+    reviewer: CompleteUser | undefined,
+}
 
 export interface Address {
     streetNumber : String,

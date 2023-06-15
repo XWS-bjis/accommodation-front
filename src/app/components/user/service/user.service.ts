@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LogedUser, User } from '../model/register.model';
+import { CompleteUser, LogedUser, User } from '../model/register.model';
 import { BehaviorSubject, Observable, catchError, of } from 'rxjs';
 import { LoginDTO } from '../model/login.model';
 import { Route, Router } from '@angular/router';
@@ -29,6 +29,10 @@ export class UserService {
 
   public getById(id: string): Observable<User> {
     return this.http.get<User>(`${baseUrl}/find/${id}`, {headers:headers});
+  }
+
+  public getAll(): Observable<CompleteUser[]> {
+    return this.http.get<CompleteUser[]>(baseUrl);
   }
 
   public deleteById(id: string): Observable<any>{

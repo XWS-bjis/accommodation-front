@@ -27,7 +27,8 @@ import { ViewAccommodationComponent } from './components/accommodation/view-acco
 import { AddAvailablePeriodComponent } from './components/accommodation/add-available-period/add-available-period/add-available-period.component';
 import { EditComponent } from './components/user/edit/edit/edit.component';
 import { GuestReservationComponent } from './components/reservation/guest-reservation/guest-reservation.component';
-
+import {MatCardModule} from '@angular/material/card';
+import { ViewVisitedAccommodationsComponent } from './components/accommodation/view-visited-accommodations/view-visited-accommodations.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { GuestReservationComponent } from './components/reservation/guest-reserv
     ViewAccommodationComponent,
     AddAvailablePeriodComponent,
     EditComponent,
-    GuestReservationComponent
+    GuestReservationComponent,
+    ViewVisitedAccommodationsComponent
   ],
   imports: [
     HttpClientModule,
