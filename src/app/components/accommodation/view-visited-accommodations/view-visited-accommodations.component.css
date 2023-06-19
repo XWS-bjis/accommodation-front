@@ -1,0 +1,54 @@
+/* Stil za naslov */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Stil za ime smeštaja */
+  h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  /* Stil za prosečnu ocenu */
+  p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  /* Stil za ocene */
+  li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Stil za dugmad */
+  button {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-left: 10px;
+  }
+  
+  /* Stil za unos ocene */
+  input[type="text"] {
+    font-size: 14px;
+    padding: 5px;
+    width: 100px;
+    margin-right: 10px;
+  }
+  
+  /* Stil za listu smeštaja */
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Stil za spoljni okvir smeštaja */
+  li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
