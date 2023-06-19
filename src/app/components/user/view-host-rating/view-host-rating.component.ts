@@ -60,6 +60,9 @@ export class ViewHostRatingComponent implements OnInit {
     console.log(payload);
     this.userService.editGrade(payload, userId).subscribe(
       data => {
+        this.userService.editHighlitedHost(userId).subscribe(
+          data=>{}
+        )
         console.log(data);
     }, error => {
       console.log(error);
@@ -74,6 +77,9 @@ export class ViewHostRatingComponent implements OnInit {
     console.log(payload);
     this.userService.createGrade(payload, userId).subscribe(
       data => {
+        this.userService.editHighlitedHost(userId).subscribe(
+          data=>{}
+        )
         console.log(data);
     }, error => {
       console.log(error);

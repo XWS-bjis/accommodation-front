@@ -104,5 +104,9 @@ export class UserService {
   deleteGrade(userId : string, hostId: string): Observable<void>{
     return this.http.delete<void>(`${gradeBaseUrl}/${hostId}/${userId}`, { headers: headers });
   }
+
+  editHighlitedHost(userId: string): Observable<void>{
+    return this.http.put<void>(`${baseUrl}/featured-host/${userId}`, { headers:headers });
+  }
   
 }
