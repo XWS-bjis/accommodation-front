@@ -104,7 +104,7 @@
           [(ngModel)]="filter.maxPrice"
           (ngModelChange)="sideFilterChanged()">
       </mat-form-field>     
-          <mat-checkbox class="example-margin" [(ngModel)]="filter.host" (ngModelChange)="sideFilterChanged()">featured host</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="featuredHost" (ngModelChange)="sideFilterChanged()">featured host</mat-checkbox>
           <mat-checkbox class="example-margin" [(ngModel)]="offer.wifi" (ngModelChange)="sideFilterChanged()"> wifi</mat-checkbox>
           <mat-checkbox class="example-margin" [(ngModel)]="offer.parking" (ngModelChange)="sideFilterChanged()"> parking</mat-checkbox>
           <mat-checkbox class="example-margin" [(ngModel)]="offer.kitchen" (ngModelChange)="sideFilterChanged()"> kitchen</mat-checkbox>

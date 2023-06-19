@@ -17,6 +17,7 @@ export class AccommodationPageComponent implements OnInit {
   public totalPassengers: number = 0;
   public price: Price = {} as Price;
   public offer: Offer = {wifi: false, parking: false, kitchen: false, airConditioner: false, petsAllowed: false} as Offer; 
+  public featuredHost:  boolean = false;
 
   getAccommodations(): void {
     this.service.getAllAccommodations().subscribe(data => {
@@ -33,6 +34,7 @@ export class AccommodationPageComponent implements OnInit {
 
   sideFilterChanged(): void{
     this.filter.offer = this.offer;
+    this.filter.featuredHost = this.featuredHost
     this.service.sideFilter(this.filter).subscribe(data => {
       this.accommodations = data;
     })
@@ -52,7 +54,7 @@ export class AccommodationPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.filter.minPrice = 0;
-    this.filter.maxPrice = Number.MAX_VALUE;
+    this.filter.maxPrice = 4000;
     this.getAccommodations();
   }
 
