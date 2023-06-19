@@ -19,4 +19,6 @@
         <div class="item-container" routerLink="create-accommodation" *ngIf="role === 'ROLE_ADMIN'"><mat-icon>library_add</mat-icon>Create accommodation</div>
         <div class="item-container" *ngIf="role === 'ROLE_ADMIN'"><mat-icon>update</mat-icon>Update info</div>
         <div class="item-container" *ngIf="role === 'ROLE_ADMIN'"><mat-icon>question_answer</mat-icon>Manage requests</div>
+        <div class="item-container" *ngIf="userExists === 'true'" routerLink="visited-accommodations"><mat-icon>question_answer</mat-icon>Accommodations rating</div>
+
 </div>
