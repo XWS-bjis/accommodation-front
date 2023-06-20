@@ -49,6 +49,7 @@ export class ViewVisitedAccommodationsComponent implements OnInit {
     this.accommodationService.deleteGrade(this.loggedInUserId, accommodationId).subscribe(
       data => {
         console.log(data);
+        window.location.reload();
     }, error => {
       console.log(error);
     })
@@ -63,6 +64,7 @@ export class ViewVisitedAccommodationsComponent implements OnInit {
     this.accommodationService.editGrade(payload, accommodationId).subscribe(
       data => {
         console.log(data);
+        window.location.reload();
     }, error => {
       console.log(error);
     })
@@ -77,6 +79,7 @@ export class ViewVisitedAccommodationsComponent implements OnInit {
     this.accommodationService.createGrade(payload, accommodationId).subscribe(
       data => {
         console.log(data);
+        window.location.reload();
     }, error => {
       console.log(error);
     })
