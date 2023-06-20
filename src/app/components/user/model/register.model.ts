@@ -5,7 +5,8 @@ export interface User{
     email: string,
     password: string,
     role: string,
-    address: Address
+    address: Address,
+    highlightedHost:boolean
 }
 
 

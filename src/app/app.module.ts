@@ -21,7 +21,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatCardModule } from '@angular/material/card';
 import { HostAccommodationComponent } from './components/reservation/host-accommodation/host-accommodation.component';
 import { ViewAccommodationComponent } from './components/accommodation/view-accommodation/view-accommodation.component';
 import { AddAvailablePeriodComponent } from './components/accommodation/add-available-period/add-available-period/add-available-period.component';
@@ -29,6 +28,7 @@ import { EditComponent } from './components/user/edit/edit/edit.component';
 import { GuestReservationComponent } from './components/reservation/guest-reservation/guest-reservation.component';
 import {MatCardModule} from '@angular/material/card';
 import { ViewVisitedAccommodationsComponent } from './components/accommodation/view-visited-accommodations/view-visited-accommodations.component';
+import { ViewHostRatingComponent } from './components/user/view-host-rating/view-host-rating.component';
 
 
 @NgModule({
@@ -44,7 +44,8 @@ import { ViewVisitedAccommodationsComponent } from './components/accommodation/v
     AddAvailablePeriodComponent,
     EditComponent,
     GuestReservationComponent,
-    ViewVisitedAccommodationsComponent
+    ViewVisitedAccommodationsComponent,
+    ViewHostRatingComponent
   ],
   imports: [
     HttpClientModule,

@@ -4,9 +4,11 @@ import { CompleteUser, LogedUser, User } from '../model/register.model';
 import { BehaviorSubject, Observable, catchError, of } from 'rxjs';
 import { LoginDTO } from '../model/login.model';
 import { Route, Router } from '@angular/router';
+import { Host } from '../model/host.model';
 
 
 const baseUrl = 'http://localhost:8084/api/v1/user';
+const gradeBaseUrl = 'http://localhost:8084/host-grade';
 const headers: HttpHeaders = new HttpHeaders({'Content-Type':'application/json'});
 
 @Injectable({
@@ -85,4 +87,26 @@ export class UserService {
     this.nav.next('false');
     this.router.navigate(['']);
   }
+
+  
+  public visitedHosts(userId: string): Observable<Host[]> {
+      return this.http.get<Host[]>(`${baseUrl}/${userId}/visited-hosts`);
+  }
+
+  createGrade(grade : any, userId: string): Observable<void>{
+    return this.http.post<void>(`${gradeBaseUrl}/${userId}`,JSON.stringify(grade), { headers: headers });
+  }
+
+  editGrade(grade : any, userId: string): Observable<void>{
+    return this.http.put<void>(`${gradeBaseUrl}/${userId}`,JSON.stringify(grade), { headers:headers });
+  }
+
+  deleteGrade(userId : string, hostId: string): Observable<void>{
+    return this.http.delete<void>(`${gradeBaseUrl}/${hostId}/${userId}`, { headers: headers });
+  }
+
+  editHighlitedHost(userId: string): Observable<void>{
+    return this.http.put<void>(`${baseUrl}/featured-host/${userId}`, { headers:headers });
+  }
+  
 }

@@ -40,6 +40,7 @@ export class EditComponent implements OnInit {
       this.user = data;
       this.address = data.address;
       console.log(this.user)
+      console.log(this.user.highlightedHost)
     });
   }
 

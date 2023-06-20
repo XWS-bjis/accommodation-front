@@ -52,7 +52,7 @@ export interface AccommodationSearch {
 }
 
 export interface AccommodationFilter {
-    host: boolean;
+    featuredHost: boolean;
     minPrice: number;
     maxPrice: number;
     offer: Offer;

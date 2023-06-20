@@ -34,6 +34,7 @@
 
                 <label class="form-label" for="country">*Country:</label>
                 <input class="text-input" type="text" name="country" placeholder="Enter country" id="country" [(ngModel)]="address.country" required>
+                <label *ngIf="user.highlightedHost" style="margin-top: 10px;">HIGHLIGHTED HOST</label>
             </div>
 
         </div>

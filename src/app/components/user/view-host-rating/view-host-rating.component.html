@@ -1,0 +1,18 @@
+<h1>Host List</h1>
+<ul>
+  <li *ngFor="let host of hosts">
+    <h2>{{ host.email }}</h2>
+    <p>Average Grade: {{ host.avgGrade }}</p>
+    <ul>
+      <li *ngFor="let grade of host.grades">
+        Grade: {{ grade.value }} by {{ grade.reviewer?.name }} {{ grade.reviewer?.surname }}
+        <button *ngIf="loggedInUserId === grade.reviewerId" (click)="deleteGrade(host.id)">Delete</button>
+        <label *ngIf="loggedInUserId === grade.reviewerId">New Grade: </label>
+        <input *ngIf="loggedInUserId === grade.reviewerId" type="text" [(ngModel)]="gradeValueEdit">
+        <button *ngIf="loggedInUserId === grade.reviewerId" (click)="editGrade(host.id)">Edit</button>
+      </li>
+    </ul>
+    <input type="text" [(ngModel)]="gradeValueAdd">
+    <button (click)="addGrade(host.id)">Add</button>
+  </li>
+</ul>
